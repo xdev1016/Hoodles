@@ -1,0 +1,112 @@
+@use "../../styles/variables.scss" as vvv;
+
+.team-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: vvv.$pastelGreen;
+}
+.team-list-container {
+  display: grid;
+  margin: 5em 0em;
+  justify-content: center;
+  align-items: flex-start;
+  grid-template-columns: auto auto auto;
+  max-width: 1280px;
+  width: 100%;
+  column-gap: 3em;
+  color: vvv.$pastelGreyBlue;
+}
+.team-background {
+  background: url("../../assets/pictures/birds2.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  width: 100%;
+}
+.team-header {
+  font-size: 6em;
+  padding: 1em 0em 0.5em 0em;
+  width: 100%;
+  display: flex;
+  letter-spacing: 5px;
+
+  justify-content: center;
+  text-align: center;
+  -webkit-text-stroke: 1px vvv.$pastelYellow;
+  -webkit-text-fill-color: vvv.$transparent;
+  font-style: bold;
+  position: relative;
+  z-index: 4;
+  font-family: "Fredoka One", cursive;
+  animation: infinite alternate elevate 1.5s;
+  background: linear-gradient(0deg, vvv.$transparent, vvv.$pastelGreen);
+}
+.vanish {
+  display: flex;
+}
+.member-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 33%;
+  width: 100%;
+}
+.member-name {
+  font-size: 3em;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px vvv.$pastelYellow;
+  -webkit-text-fill-color: vvv.$transparent;
+  font-family: "Fredoka One", cursive;
+}
+.member-description {
+  max-width: 80%;
+  color: vvv.$pastelYellow;
+  text-align: center;
+}
+.member-avatar {
+  height: 120px;
+  max-width: 30vw;
+  border-radius: 100%;
+  border: 1px solid vvv.$pastelSukhYellow;
+  //   outline: 1px solid vvv.$pastelFuschia;
+  //   outline-offset: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .team-list-container {
+    grid-template-columns: auto auto;
+    max-width: 95vw;
+  }
+  .member-container {
+    min-width: 50%;
+  }
+  .member-name {
+    font-size: 1.5em;
+  }
+  .vanish {
+    display: none;
+  }
+}
+
+@keyframes elevate {
+  0% {
+    text-shadow: 0 0 70px vvv.$pastelSukhYellow, 0 0 80px vvv.$pastelSukhYellow,
+      0 0 100px vvv.$pastelSukhYellow;
+  }
+  49% {
+    text-shadow: 0 0 40px vvv.$pastelSukhYellow, 0 0 50px vvv.$pastelSukhYellow,
+      0 0 80px vvv.$pastelSukhYellow;
+  }
+  51% {
+    text-shadow: 0 0 40px vvv.$pastelCyan, 0 0 50px vvv.$pastelCyan,
+      0 0 80px vvv.$pastelCyan;
+  }
+  100% {
+    text-shadow: 0 0 70px vvv.$pastelCyan, 0 0 80px vvv.$pastelCyan,
+      0 0 100px vvv.$pastelCyan;
+  }
+}

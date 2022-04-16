@@ -1,0 +1,242 @@
+@use "../../styles/variables.scss" as vvv;
+
+.super-container {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  max-height: 100px;
+  width: 100%;
+  font-size: 1.2em;
+}
+.icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  height: auto;
+  transition: 0.1s ease;
+  padding: 0.1em;
+  border-radius: 1em;
+  object-fit: cover;
+  border: 2px solid vvv.$transparent;
+  outline: 3px transparent solid;
+  outline-offset: 0px;
+  &:hover {
+    transition: 0.2s ease;
+
+    outline: 3px solid white;
+    outline-offset: 10px;
+  }
+}
+a {
+  display: flex;
+  align-items: center;
+}
+.mobile-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  transition: 0.2s ease;
+}
+.navbar-container {
+  max-width: 97vw;
+  margin: 1em 1vw;
+
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 1280px;
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 1.2em;
+  color: vvv.$pastelGreyBlue;
+  background: rgba(255, 255, 255, 0.418);
+  backdrop-filter: blur(5px);
+  display: flex;
+  width: 100vw;
+  max-height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s ease;
+  height: 60px;
+}
+
+.hbar {
+  position: relative;
+  border-bottom: 2px solid vvv.$pastelGreyBlue;
+  border-top: 2px solid vvv.$pastelGreyBlue;
+  border-radius: 2em;
+  width: 100%;
+}
+
+.shrunk {
+  height: 1.5em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  transition: 0.2s ease;
+}
+.logo-container {
+  font-size: 1.5em;
+  color: vvv.$pastelGreyBlue;
+  text-decoration: none;
+  width: 230px;
+  font-weight: bold;
+  font-family: "Fredoka One", cursive;
+  transition: 0.2s ease;
+  display: flex;
+  height: inherit;
+  align-items: center;
+  &:hover {
+    transition: 0.2s ease;
+    color: vvv.$pastelGreen;
+  }
+}
+
+.mint-now {
+  border: 2px solid vvv.$pastelGreyBlue;
+
+  padding: 0.5em;
+  margin: 0em 0.2em;
+  background-color: vvv.$transparent;
+  transition: 0.2s ease;
+  border-radius: 1em;
+  color: vvv.$pastelGreyBlue;
+  font-family: "Secular One", sans-serif;
+  &:hover {
+    transition: 0.2s ease;
+    border: 2px solid vvv.$pastelGreen;
+    color: vvv.$pastelGreen;
+  }
+}
+.navbar-hamburger {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 1em;
+  padding: 1em;
+  display: none;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+
+  transition: 0.2s ease;
+}
+.navbtn {
+  cursor: pointer;
+  transition: 0.1s ease;
+  border: 5px solid vvv.$transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 1em;
+  border: 2px solid vvv.$transparent;
+  margin: 0em 0.25em;
+  outline: 3px transparent solid;
+  outline-offset: 0px;
+  &:hover {
+    transition: 0.2s ease;
+
+    outline: 3px solid white;
+    outline-offset: 10px;
+  }
+
+  &:focus {
+    color: vvv.$pastelGreyBlue;
+  }
+}
+.navbar-desktop-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.navbar-socials {
+  display: flex;
+}
+.navbar-mobile-options {
+  display: none;
+  height: 0px;
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+}
+.locked {
+  background-color: vvv.$secondary;
+  z-index: 0;
+}
+.unlocked {
+  background-color: vvv.$secondary;
+  z-index: 11;
+}
+@media only screen and (max-width: 768px) {
+  .mobile-nav {
+    width: 100%;
+  }
+  .navbar-container {
+    flex-direction: column;
+    margin: 1em 2vw;
+  }
+  .navbar-hamburger {
+    display: flex;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .navbar-socials {
+    padding: 0.5em 0em;
+  }
+  .mint-now {
+    font-size: 1.2em;
+    width: 100%;
+  }
+  .icon {
+    outline: 3px transparent solid;
+    outline-offset: 0px;
+    &:hover {
+      transition: 0.2s ease;
+      outline: 3px solid vvv.$transparent;
+    }
+  }
+  .smoll {
+    font-size: 1em;
+  }
+  .navbtn {
+    flex-grow: 1;
+    padding: 0.5em 1em;
+    &:hover {
+      outline: 3px solid vvv.$transparent;
+    }
+  }
+  .navbar-mobile-options {
+    display: flex;
+    margin-top: 2em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    font-size: 1.2em;
+    border-radius: 1em;
+    z-index: 12;
+    padding: 1em;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.418);
+  }
+  .navbar-desktop-options {
+    display: none;
+  }
+  .reduced {
+    height: 30px;
+    width: 30px;
+    transition: 0.2s ease;
+    box-shadow: none;
+    padding: 0.5em;
+    border: 2px solid vvv.$transparent;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #eddeab,
+      0 0 40px #eddeab, 0 0 50px #eddeab, 0 0 60px #eddeab, 0 0 70px #eddeab;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #d4af37, 0 0 40px #d4af37,
+      0 0 50px #d4af37, 0 0 60px #d4af37, 0 0 70px #d4af37, 0 0 80px #d4af37;
+  }
+}

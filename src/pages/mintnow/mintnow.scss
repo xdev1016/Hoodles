@@ -1,0 +1,252 @@
+@use "../../styles/variables.scss" as vvv;
+
+.mint-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //   background: turquoise;
+  background: linear-gradient(0deg, vvv.$pastelYellow, 50%, vvv.$pastelPink);
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fredoka One", cursive;
+  color: vvv.$pastelPink;
+}
+.mint-help-icon {
+  cursor: pointer;
+}
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+.progress-bar {
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  position: relative;
+  margin: 1em;
+  border-radius: 1em;
+  justify-content: flex-start;
+  height: 30px;
+  width: 100%;
+  padding: 0.5em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
+}
+.progress-bar-fill {
+  display: block;
+  border-radius: 0.8em;
+  background-color: vvv.$pastelLimeGreen;
+  position: relative;
+  overflow: hidden;
+}
+.supply-minted {
+  // left: 10%;
+  position: absolute;
+}
+.minter {
+  // min-width: 400px;
+  // width: 100vw;
+  // margin-top: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.876);
+  padding: 2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
+  border-radius: 1em;
+  z-index: 5;
+  align-items: center;
+}
+.mint-business-container {
+  padding: 0.5em 0em;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid lightgray;
+}
+.mint-logistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mint-business {
+  display: flex;
+  flex-direction: column;
+  // flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5em 0em;
+}
+.price-container {
+  font-size: 1.5em;
+  display: flex;
+  color: vvv.$pastelLimeGreen;
+  justify-content: center;
+}
+.mint-btn-container {
+  display: grid;
+  // grid-template-columns: auto auto;
+  gap: 0.5em;
+  margin-left: 1em;
+  justify-content: space-around;
+  align-content: center;
+
+  grid-template-columns: auto auto auto;
+  .mint-increment-btn:nth-of-type(1) {
+    order: 1;
+  }
+  .mint-increment-btn:nth-of-type(2) {
+    order: 4;
+  }
+  .mint-increment-btn:nth-of-type(3) {
+    order: 2;
+  }
+  .mint-increment-btn:nth-of-type(4) {
+    order: 5;
+  }
+  .mint-increment-btn:nth-of-type(5) {
+    order: 3;
+  }
+  .mint-increment-btn:nth-of-type(6) {
+    order: 6;
+  }
+
+  // .mint-increment-btn:nth-of-type(1) {
+  //   order: 1;
+  // }
+  // .mint-increment-btn:nth-of-type(2) {
+  //   order: 2;
+  // }
+  // .mint-increment-btn:nth-of-type(3) {
+  //   order: 3;
+  // }
+  // .mint-increment-btn:nth-of-type(4) {
+  //   order: 4;
+  // }
+  // .mint-increment-btn:nth-of-type(5) {
+  //   order: 5;
+  // }
+  // .mint-increment-btn:nth-of-type(6) {
+  //   order: 6;
+  // }
+}
+.mint-increment-btn {
+  padding: 0.5em 1em;
+  border: 1px solid vvv.$transparent;
+  border-radius: 1em;
+  font-family: "Fredoka One", cursive;
+  color: vvv.$pastelPink;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
+}
+.mint-amount-selected {
+  transition: 0.2s ease;
+  color: white;
+  background-color: vvv.$pastelLimeGreen;
+  border-color: vvv.$pastelLimeGreen;
+}
+.mint-amount-nope {
+  background-color: vvv.$pastelGreyBlue;
+  border-color: vvv.$pastelGreyBlue;
+  // color: white;
+  cursor: not-allowed;
+}
+.mint-hoodles-btn {
+  padding: 1em 2em;
+  font-family: "Fredoka One", cursive;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  font-size: 1.5em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
+  background: linear-gradient(
+    45deg,
+    vvv.$pastelGreyBlue,
+    vvv.$pastelPink,
+    vvv.$pastelLimeGreen
+  );
+  background-size: 150% 150%;
+  background-position: 0% 100%;
+  transition: 0.5s ease;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    transition: 0.5s ease;
+    color: white;
+    background-position: 100% 0%;
+  }
+}
+
+.mint-amount {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.mint-wallet-option {
+  cursor: pointer;
+  font-family: "Fredoka One", cursive;
+  border: none;
+  width: 100%;
+  border-radius: 1em;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  font-weight: normal;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
+  background-color: white;
+  color: vvv.$pastelPink;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  .wallet-icon {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .minter {
+    min-width: auto;
+    flex-direction: column;
+  }
+  .mint-business-container {
+    flex-direction: column-reverse;
+    padding-top: 1em;
+  }
+  .mint-btn-container {
+    grid-template-columns: auto auto auto;
+    .mint-increment-btn:nth-of-type(1) {
+      order: 1;
+    }
+    .mint-increment-btn:nth-of-type(2) {
+      order: 4;
+    }
+    .mint-increment-btn:nth-of-type(3) {
+      order: 2;
+    }
+    .mint-increment-btn:nth-of-type(4) {
+      order: 5;
+    }
+    .mint-increment-btn:nth-of-type(5) {
+      order: 3;
+    }
+    .mint-increment-btn:nth-of-type(6) {
+      order: 6;
+    }
+  }
+}

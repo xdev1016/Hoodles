@@ -1,0 +1,147 @@
+@use "../styles/variables.scss" as vvv;
+
+.bullet {
+  position: relative;
+  height: 25px;
+  width: 20px;
+  margin-top: 5px;
+  margin-right: 8px;
+  transform: rotate(45deg);
+}
+
+.take-me-to-mint-btn {
+  border: 3px solid white;
+  background-color: vvv.$pastelPink;
+  padding: 1em 2em;
+  display: flex;
+  font-size: 1.5em;
+  min-width: 250px;
+  // margin-top: 10vh;
+  cursor: pointer;
+  justify-content: center;
+  font-family: "Fredoka One", cursive;
+  color: white;
+  border-radius: 1em;
+  box-shadow: 10px 10px vvv.$pastelSukhYellow;
+  margin: 1em;
+  transition: 0.2s ease;
+  transform: scaleX(1);
+
+  &:hover {
+    transition: 0.2s ease;
+    color: vvv.$pastelPink;
+    background-color: white;
+    transform: scaleX(1.05);
+    box-shadow: 10px 10px vvv.$pastelPink;
+    -webkit-text-stroke: white;
+    text-shadow: 5px 5px vvv.$pastelYellow;
+  }
+}
+.variant {
+  background-color: vvv.$pastelLimeGreen;
+}
+.countdown-container {
+  position: relative;
+  // min-width: 600px;
+  font-size: 3em;
+  // top: 20vh;
+  display: flex;
+  padding: 0.5em;
+  // left: -12vw;
+  flex-direction: column;
+  justify-content: space-around;
+  // font-family: "Secular One", sans-serif;
+  align-items: center;
+  margin: 0.5em;
+  font-family: "Fredoka One", cursive;
+  // background-color: white;
+  // border-radius: 1em;
+  color: vvv.$pastelPink;
+  .countdown-title {
+    font-size: "1.2em";
+    // color: vvv.$pastelLightBlue;
+  }
+  .countdown-number-container {
+    display: flex;
+    font-size: 1.5em;
+    color: vvv.$pastelPink;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fredoka One", cursive;
+    margin: 0em 0.1em;
+  }
+  .countdown-number {
+    animation: infinite alternate twinkle 1s;
+    // min-width: 60px;
+    display: flex;
+    justify-content: center;
+    color: vvv.$transparent;
+    -webkit-text-stroke: 1px white;
+
+    // -webkit-text-fill-color: transparent;
+  }
+  .countdown-unit {
+    font-size: 0.5em;
+    font-stretch: 50%;
+    color: vvv.$pastelLimeGreen;
+  }
+}
+.connect-btn {
+  cursor: pointer;
+  border: 0px solid vvv.$pastelGreyBlue;
+  // background-color: vvv.$transparent;
+  font-family: "Secular One", sans-serif;
+  color: white;
+  border-radius: 1em;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  background: linear-gradient(
+    45deg,
+    vvv.$pastelGreyBlue,
+    vvv.$pastelCandy,
+    vvv.$pastelSukhYellow
+  );
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  transition: 0.5s ease;
+  text-align: center;
+  align-items: center;
+  &:hover {
+    transition: 0.5s ease;
+    color: vvv.$pastelRedPink;
+    background-position: 100% 50%;
+  }
+}
+.wallet {
+  display: flex;
+  align-items: center;
+  color: vvv.$pastelGreen;
+}
+@media only screen and (max-width: 768px) {
+  .take-me-to-mint-btn {
+    // left: -30vw;
+  }
+  .countdown-container {
+    font-size: 2em;
+    margin: 0.5em;
+  }
+}
+@keyframes twinkle {
+  0% {
+    text-shadow: 0 0 10px vvv.$pastelGreyBlue, 0 0 15px vvv.$pastelGreyBlue,
+      0 0 15px vvv.$pastelGreyBlue;
+  }
+  49% {
+    text-shadow: 0 0 5px vvv.$pastelGreyBlue, 0 0 5px vvv.$pastelGreyBlue,
+      0 0 15px vvv.$pastelGreyBlue;
+  }
+  51% {
+    text-shadow: 0 0 5px vvv.$pastelPink, 0 0 5px vvv.$pastelPink,
+      0 0 15px vvv.$pastelPink;
+  }
+  100% {
+    text-shadow: 0 0 10px vvv.$pastelPink, 0 0 15px vvv.$pastelPink,
+      0 0 15px vvv.$pastelPink;
+  }
+}

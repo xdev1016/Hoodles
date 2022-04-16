@@ -1,0 +1,93 @@
+@use "../../styles/variables.scss" as vvv;
+
+.faq-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100vw;
+  transition: 0.2s ease;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  background-color: vvv.$pastelGreyBlue;
+  object-fit: cover;
+  padding-top: 4em;
+}
+.faq-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background: url("../../assets/pictures/circle-scatter.svg");
+  background: url("../../assets/pictures/circle-scatter-haikei.svg");
+  background-size: cover;
+  height: 100%;
+  padding: 2em 0em;
+}
+.faq-header {
+  display: flex;
+  justify-content: center;
+  font-size: 6em;
+
+  padding: 0.5em 2em;
+  border-radius: 0.5em;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+  font-style: bold;
+  letter-spacing: 5px;
+
+  font-family: "Fredoka One", cursive;
+  animation: infinite alternate radiate 1.5s;
+}
+.faq-question {
+  font-size: 1.2em;
+  color: vvv.$pastelCyan;
+}
+.alternate {
+  color: vvv.$pastelGold;
+}
+.faq-divider {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  max-width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  transform: rotate(180deg);
+  object-position: bottom;
+  object-fit: cover;
+  background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+  .faq-container {
+  }
+  .faq-header {
+    width: 90vw;
+  }
+}
+@keyframes radiate {
+  0% {
+    text-shadow: 0 0 70px vvv.$pastelBabyPink, 0 0 80px vvv.$pastelBabyPink,
+      0 0 100px vvv.$pastelBabyPink;
+  }
+  49% {
+    text-shadow: 0 0 40px vvv.$pastelBabyPink, 0 0 50px vvv.$pastelBabyPink,
+      0 0 80px vvv.$pastelBabyPink;
+  }
+  51% {
+    text-shadow: 0 0 40px vvv.$pastelPink, 0 0 50px vvv.$pastelPink,
+      0 0 80px vvv.$pastelPink;
+  }
+  100% {
+    text-shadow: 0 0 70px vvv.$pastelPink, 0 0 80px vvv.$pastelPink,
+      0 0 100px vvv.$pastelPink;
+  }
+}

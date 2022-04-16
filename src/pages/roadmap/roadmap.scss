@@ -1,0 +1,394 @@
+@use "../../styles/variables.scss" as vvv;
+
+.roadmap-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  color: vvv.$pastelYellow;
+
+  background: vvv.$pastelSukhYellow;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+.roadmap-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/pictures/stacked-waves-haikei (3).svg");
+  justify-content: center;
+
+  align-items: center;
+}
+.roadmap-header {
+  font-size: 7em;
+
+  letter-spacing: 5px;
+  padding: 0.5em 2em;
+  margin: 1em;
+  border-radius: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  -webkit-text-stroke: 2px vvv.$pastelSukhYellow;
+  -webkit-text-fill-color: vvv.$transparent;
+  font-style: bold;
+  font-family: "Fredoka One", cursive;
+  animation: infinite alternate scintillate 1.5s;
+}
+.gradient-separator {
+  display: flex;
+  min-height: 100px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+.roadmap-sub-header {
+  font-size: 1.5em;
+  font-style: italic;
+  padding: 0em 0.5em;
+  max-width: 95vw;
+}
+.roadmap-item {
+  position: relative;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 3;
+  max-width: 1180px;
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+  margin: 2em 0em;
+  justify-content: space-between;
+
+  .roadmap-item-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .roadmap-item-desc {
+    display: flex;
+    text-align: left;
+    height: 100%;
+    z-index: 2;
+  }
+  p {
+  }
+}
+.roadmap-info {
+  position: relative;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  max-width: 700px;
+  margin: 0em 2em;
+  width: 100%;
+  border: solid 5px white;
+  box-shadow: 20px 20px 0px vvv.$pastelSukhYellow;
+  background-color: vvv.$pastelPink;
+  justify-content: space-between;
+  z-index: 0;
+}
+.domino-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+}
+.roadmap-pointer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid vvv.$transparent;
+  border-right: 10px solid vvv.$transparent;
+  border-top: 20px solid vvv.$pastelLightBlue;
+  top: 50%;
+  right: -55px;
+  // left: 30%;
+  transform: rotate(90deg);
+}
+.roadmap-item:first-of-type {
+  .roadmap-info {
+    flex-direction: row-reverse;
+    box-shadow: 20px 20px 0px vvv.$pastelLightBlue;
+  }
+  .roadmap-pointer {
+    right: auto;
+    left: -55px;
+  }
+}
+.roadmap-item:nth-of-type(2) {
+  .roadmap-info {
+    box-shadow: 20px 20px 0px vvv.$pastelLightBlue;
+  }
+  .roadmap-pointer {
+    left: auto;
+    transform: rotate(-90deg);
+  }
+}
+.roadmap-item:nth-of-type(3) {
+  .roadmap-info {
+    flex-direction: row-reverse;
+    box-shadow: 20px 20px 0px vvv.$pastelLightBlue;
+  }
+  .roadmap-pointer {
+    right: auto;
+    left: -55px;
+  }
+}
+.roadmap-item:nth-of-type(4) {
+  .roadmap-info {
+    box-shadow: 20px 20px 0px vvv.$pastelLightBlue;
+  }
+  .roadmap-pointer {
+    left: auto;
+    transform: rotate(-90deg);
+  }
+}
+.roadmap-item:nth-of-type(5) {
+  .roadmap-info {
+    color: vvv.$pastelPink;
+    flex-direction: row-reverse;
+    background-color: white;
+    box-shadow: 20px 20px 0px vvv.$pastelPink;
+  }
+
+  .roadmap-pointer {
+    right: auto;
+    left: -55px;
+    border-top: 20px solid vvv.$pastelPink;
+  }
+}
+
+.roadmap-item-title {
+  font-family: "Fredoka One", cursive;
+}
+.roadmap-visual {
+  position: relative;
+  display: flex;
+  left: 0;
+  right: auto;
+  width: 300px;
+  max-width: 50vw;
+
+  outline-offset: 5px;
+  border-radius: 100%;
+}
+
+.roadmap-item:nth-of-type(odd) {
+  flex-direction: row-reverse;
+  p {
+    text-align: left;
+  }
+}
+.pink-wave-transition {
+  position: absolute;
+  z-index: 4;
+  max-height: 50vh;
+  object-position: bottom;
+  top: 0;
+  width: 100vw;
+  transform: rotate(180deg);
+  object-fit: fill;
+}
+
+.chain {
+  overflow: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 14em;
+  max-width: 100px;
+}
+
+.inverted {
+  position: absolute;
+  z-index: 4;
+  max-height: 50vh;
+  object-position: bottom;
+  bottom: 0;
+  width: 100vw;
+  transform: rotate(180deg);
+  object-fit: fill;
+}
+
+.roadmap-phase2 {
+  margin: 2em 0em;
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0em 1em;
+}
+
+.roadmap-phase2-text {
+  display: flex;
+  flex-direction: column;
+  background-color: vvv.$pastelBlue;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 1em;
+  width: 95%;
+  flex-grow: 1;
+  border-radius: 2em;
+  font-size: 1.5em;
+  transition: 0.2s ease;
+  height: auto;
+  width: auto;
+}
+
+.roadmap-seen {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  text-align: right;
+  color: white;
+  font-size: 1.2em;
+  width: 100%;
+  max-width: 1180px;
+}
+.seen-check {
+  margin-left: 0.5em;
+}
+.phase2-send {
+  height: 70px;
+  width: 70px;
+  margin: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: vvv.$pastelBlue;
+}
+.roadmap-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .roadmap-phase2 {
+    max-width: 100vw;
+  }
+  .roadmap-phase2-text {
+    font-size: 1.2em;
+  }
+  .roadmap-info {
+    padding: 0em;
+  }
+  .roadmap-header {
+    font-size: 4em;
+  }
+  .phase2-send {
+    height: 30px;
+    width: 30px;
+  }
+  .roadmap-pointer {
+    display: none;
+    border-left: 10px solid vvv.$transparent;
+    border-right: 10px solid vvv.$transparent;
+    border-top: 20px solid vvv.$pastelLightBlue;
+  }
+  .arrow-container {
+    position: absolute;
+    z-index: 10;
+    top: -10px;
+  }
+
+  .arrow {
+    height: 40px;
+  }
+  .arrow:first-of-type {
+    top: -10px;
+  }
+  .arrow:last-of-type {
+    top: 10px;
+  }
+  .roadmap-item {
+    padding: 0em 0.5em;
+    margin: 1em 0em;
+    min-height: 200px;
+    font-size: 1.2em;
+    width: auto;
+    align-items: flex-end;
+    justify-content: space-between;
+    .roadmap-info {
+      max-width: 100vw;
+      width: 100%;
+      margin: 0em;
+    }
+  }
+  .chain {
+    max-width: 1200px;
+    bottom: 25em;
+  }
+  .domino-text {
+    padding: 1em 0.5em;
+  }
+  .roadmap-avatar {
+    span {
+      display: none;
+    }
+  }
+  .roadmap-visual {
+    width: 50px;
+  }
+  .roadmap-item:first-of-type {
+    .roadmap-info {
+      flex-direction: row-reverse;
+      box-shadow: 10px 10px 0px vvv.$pastelLightBlue;
+    }
+  }
+  .roadmap-item:nth-of-type(2) {
+    .roadmap-info {
+      box-shadow: 10px 10px 0px vvv.$pastelLightBlue;
+    }
+  }
+  .roadmap-item:nth-of-type(3) {
+    .roadmap-info {
+      flex-direction: row-reverse;
+      box-shadow: 10px 10px 0px vvv.$pastelLightBlue;
+    }
+  }
+  .roadmap-item:nth-of-type(4) {
+    .roadmap-info {
+      box-shadow: 10px 10px 0px vvv.$pastelLightBlue;
+    }
+  }
+  .roadmap-item:nth-of-type(5) {
+    .roadmap-info {
+      flex-direction: row-reverse;
+      box-shadow: 10px 10px 0px vvv.$pastelPink;
+    }
+  }
+}
+
+@keyframes scintillate {
+  0% {
+    text-shadow: 0 0 70px vvv.$pastelPink, 0 0 80px vvv.$pastelPink,
+      0 0 100px vvv.$pastelPink;
+  }
+  49% {
+    text-shadow: 0 0 40px vvv.$pastelPink, 0 0 50px vvv.$pastelPink,
+      0 0 80px vvv.$pastelPink;
+  }
+  51% {
+    text-shadow: 0 0 40px vvv.$pastelGreen, 0 0 50px vvv.$pastelGreen,
+      0 0 80px vvv.$pastelGreen;
+  }
+  100% {
+    text-shadow: 0 0 70px vvv.$pastelGreen, 0 0 80px vvv.$pastelGreen,
+      0 0 100px vvv.$pastelGreen;
+  }
+}

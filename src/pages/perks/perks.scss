@@ -1,0 +1,12 @@
+.perks-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  //   margin-bottom: 5em;
+  height: fit-content;
+  justify-content: center;
+  width: 100vw;
+  transition: 0.2s ease;
+  height: 100%;
+  z-index: 1;
+}

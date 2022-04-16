@@ -1,0 +1,81 @@
+@use "../../styles/variables.scss" as vvv;
+
+.dropdown-container {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  font-family: "Secular One", sans-serif;
+  justify-content: center;
+  align-items: center;
+  color: vvv.$pastelPink;
+  width: 100%;
+  max-width: 1180px;
+  // background-color: vvv.$pastelBabyPink;
+  border-bottom: 1px solid white;
+  transition: 0.2s ease;
+  &:hover {
+    transition: 0.2s ease;
+    background-color: white;
+  }
+}
+
+.dropped {
+  transition: 0.2s ease;
+  background-color: white;
+}
+.dropdown-container:first-of-type {
+  border-radius: 1em 1em 0em 0em;
+}
+.dropdown-container:last-of-type {
+  border-radius: 0em 0em 1em 1em;
+  border-bottom: 0px solid white;
+}
+.dropdown-title {
+  border-radius: 1em;
+  padding: 2em;
+  font-size: 1.5em;
+  display: flex;
+  width: 95%;
+  max-width: 1280px;
+  font-family: "Fredoka One", cursive;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdown-text {
+  overflow: hidden;
+  border-radius: 1em;
+  cursor: pointer;
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  max-width: 1280px;
+
+  color: vvv.$pastelGreyBlue;
+}
+
+.circle {
+  transition: 0.2s ease;
+  width: 15px;
+  height: 15px;
+
+  border-radius: 1em;
+  border: 2px solid vvv.$pastelCyan;
+  background-color: vvv.$transparent;
+}
+.checked {
+  transition: 0.2s ease;
+  background-color: vvv.$pastelCyan;
+}
+@media only screen and (max-width: 768px) {
+  .dropdown-container {
+    max-width: 95vw;
+    align-items: center;
+  }
+  .dropdown-title {
+    max-width: 95vw;
+    font-size: 1.2em;
+  }
+  .dropdown-text {
+    max-width: 95vw;
+  }
+}
